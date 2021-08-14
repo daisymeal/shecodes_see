@@ -1,0 +1,63 @@
+{%extends 'base.html'%}
+
+{% load static %}
+{% block title %}- Đăng nhập {% endblock %}
+{% block body %}  
+
+
+
+    <div class="container mt-5 ">
+    <div class="">
+    <div id="auth">
+
+        <div class="row h-100" >
+            
+                <div id="" class="mt-5 pt-5 ml-5 pl-5 mr-5 pl-5">
+                    <div class="auth-logo">
+                        <a href="{%url 'home'%}"><img src="{% static 'assets/img/logo/logo.png'%}" alt="Logo"></a>
+                    </div>
+                    <h1 class="auth-title" > Đăng nhập </h1>
+                    <p class="auth-subtitle mb-5">Đăng nhập để trải nghiệm mượn sách miễn phí !</p>
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="text" class="form-control form-control-xl" placeholder="Tên đăng nhập" name="username">
+                            <div class="form-control-icon">
+                                <i class="bi bi-person"></i>
+                            </div>
+                        </div>
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="password" class="form-control form-control-xl" placeholder="Mật khẩu" name="password">
+                            <div class="form-control-icon">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
+                        </div>
+                        <!-- <div class="form-check form-check-lg d-flex align-items-end">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label text-gray-600" for="flexCheckDefault">
+                                Keep me logged in
+                            </label>
+                        </div> -->
+                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Đăng nhập</button>
+                    </form>
+                    <div class="text-center mt-5 text-lg fs-4">
+                        <h5 class="text-gray-600"> Chưa có tài khoản ? <a href="{%url 'register'%}"
+                                class="font-bold">Đăng ký ngay</a></h5>
+                        <h5><a class="font-bold" href="{% url 'password_reset' %}">Quên mật khẩu ?</a></h5>
+                    </div>
+                </div>
+           
+            <div class="col-lg-7 d-none d-lg-block">
+                <div id="auth-right">
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

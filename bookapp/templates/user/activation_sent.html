@@ -1,0 +1,32 @@
+
+{%extends 'base.html'%}
+
+{% load static %}
+{% block title %}- Kích hoạt tài khoản{% endblock %}
+{% block body %}  
+
+<div class="container mt-5 ">
+    <div class="">
+<div class="card">
+	<div class="card-header">
+		<a href="{%url 'home'%}"><h4>Back to Home</h4></a>
+		
+	</div>
+	<div class="card-body">
+		
+		<div class="alert alert-light-success color-success"><i
+				class="bi bi-check-circle"></i> 
+
+			Activation sent
+
+			<p>We’ve emailed you a link to activate your account, Please check your registered email</p>
+			<p>If you don’t receive an email, please make sure you’ve entered a right address</p>
+			</p>
+		</div>
+		
+	</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

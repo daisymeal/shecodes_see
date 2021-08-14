@@ -1,0 +1,26 @@
+
+{%extends 'base.html'%}
+
+{% load static %}
+{% block title %}- Login {% endblock %}
+{% block body %}  
+<div class="card">
+	<div class="card-header">
+		<a href="{%url 'home'%}"><h4>Back to Home</h4></a>
+		
+	</div>
+	<div class="card-body">
+		
+		<div class="alert alert-light-success color-success"><i
+				class="bi bi-check-circle"></i> 
+
+			Activated
+
+			<p>Your account is now activated</p>
+			<p>You can go back home to enjoy our services now :)</p>
+			</p>
+		</div>
+		
+	</div>
+</div>				
+{% endblock %}

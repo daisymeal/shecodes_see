@@ -1,0 +1,60 @@
+<header>
+    <!-- Header Start -->
+   <div class="header-area header-transparent">
+        <div class="main-header">
+           <div class="header-bottom  header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2 col-md-1">
+                            <div class="logo">
+                              <a href="#"><img src="assets/img/logo/logo.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-8">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">                                                                                                                                     
+                                        <li><a href="#">Trang Chủ</a></li>
+                                        <li><a href="#">Giới thiệu</a></li>
+                                        <li><a href="#">Thư viện</a></li>
+                                        <li><a href="#">Sách</a></li>
+                                       
+                                        <li><a href="#">Liên hệ</a></li>
+                                        <li class="add-list"><a href="#"><i class="ti-plus"></i> Thêm sách mới</a></li>
+                                        <li class="login"><a href="#">
+                                            
+                                            {% if user.id is not None %} 
+                                            <i class="ti-user"></i>Welcome, @{{user.username}}</a>
+                                            <ul class="submenu">
+                                                <li><a href="#">Sách của tôi</a></li>
+                                                <li><a href="#">Danh sách yêu thích</a></li>
+                                                <li><a href="#">Đơn sách</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="#">Đang chờ xác nhận</a></li>
+                                                        <li><a href="#">Đang mượn</a></li>
+                                                        <li><a href="#">Đã hoàn thành</a></li>
+                                                        
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            {%else%}
+                                            <i class="ti-user"></i> Đăng ký/Đăng nhập</a>
+                                            {%endif%}
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+   </div>
+    <!-- Header End -->
+</header>

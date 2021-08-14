@@ -1,0 +1,128 @@
+{%extends 'base.html'%}
+
+{% load static %}
+{% block title %}- Đăng nhập {% endblock %}
+{% block body %}  
+    
+   
+       
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-heading">
+                
+
+                    <div class="page-title">
+                        <div class="row">
+                            <div class="col-12 col-md-6 order-md-1 order-last">
+                                <h3>Welcome to Tram's Zone</h3>
+                                <p class="text-subtitle text-muted"><h4>This site is under development :) </h4></p>
+                            </div>
+                            <div class="col-12 col-md-6 order-md-2 order-first">
+
+                                {% if user.id is not None %}    
+                                <div class="card">
+                                    <div class="card-body py-4 px-5">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar avatar-xl">
+                                                <img src="{% static 'assets/images/faces/1.jpg' %}" alt="Face 1">
+                                            </div>
+                                            <div class="ms-3 name">
+                                                <h5 class="font-bold">Welcome, {{user.first_name}}</h5>
+                                                <h6 class="text-muted mb-0">@{{user.username}}</h6>
+                                                <h7 class="text-muted mb-0"><a href="{%url 'logout'%}">Logout</a></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {%else%}
+                                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="{%url 'login'%}">Login</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page"><a href="{%url 'register'%}">Register</a></li>
+                                    </ol>
+                                </nav>
+                                {%endif%}
+                            </div>
+                        </div>
+
+                       
+                    </div>   
+
+
+            </div>
+            <div class="page-content">
+                <section class="section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">User Information</h4>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="basicInput">First Name</label>
+                                        <input type="text" class="form-control" id="basicInput"
+                                            placeholder="{{user.first_name}}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="basicInput">Last Name</label>
+                                        <input type="text" class="form-control" id="basicInput"
+                                            placeholder="{{user.last_name}}">
+                                    </div>
+
+                                 
+
+                                    <div class="form-group">
+                                        <label for="helperText">Full name</label>
+                                        <input type="text" id="helperText" class="form-control" placeholder="{{user.first_name}} {{user.last_name}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="disabledInput">Username</label>
+                                        <input type="text" class="form-control" id="disabledInput"
+                                            placeholder="{{user.username}}" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disabledInput">Email</label>
+                                        <input type="text" class="form-control" id="readonlyInput" readonly="readonly"
+                                            value="{{user.email}}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="disabledInput">Contact support to change your email</label>
+                                        <p class="form-control-static" id="staticInput">tramszone@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="input-style">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title"><a href="{% url 'change_password'%}" class='sidebar-link'>Change Password
+                                    </a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+
+     
+        </div>
+    
+        {% endblock %}
